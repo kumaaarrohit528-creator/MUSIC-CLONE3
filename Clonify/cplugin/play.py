@@ -2,6 +2,7 @@ import os
 import random
 import string
 import asyncio
+from Clonify.utils.database import get_owner_id_from_db
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
@@ -233,8 +234,7 @@ async def play_commnd(
                     )
                 except Exception as e:
                     print(e)
-
-                    os.system(f"kill -9 {os.getpid()} && bash start")
+                        return await mystic.edit_text("❌ Failed to fetch track details.")
                 streamtype = "playlist"
                 plist_type = "yt"
                 if "&" in url:
