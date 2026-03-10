@@ -234,7 +234,7 @@ async def play_commnd(
                     )
                 except Exception as e:
                     print(e)
-                        return await mystic.edit_text("❌ Failed to fetch track details.")
+                    return await mystic.edit_text("❌ Failed to fetch track details.")
                 streamtype = "playlist"
                 plist_type = "yt"
                 if "&" in url:
